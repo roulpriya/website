@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 const projects = [
   { year: "2026", title: "AgentForge", description: "A Kanban board that spawns AI coding agents in isolated git worktrees — one agent per ticket.", href: "https://github.com/inputforge/agentforge", tags: "TypeScript · React · Bun · SQLite" },
   { year: "2025", title: "Source Radar", description: "Source-code analysis and metrics across multiple languages, built around an extensible plugin architecture.", href: "https://github.com/sourceradar/source-radar", tags: "TypeScript · Python" },
@@ -13,29 +17,33 @@ const articles = [
 ];
 
 export default function Home() {
+  const [theme, setTheme] = useState<"dark" | "light">("light");
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
+
   return (
     <main>
       <nav aria-label="Primary navigation">
         <a className="brand" href="#top">~/priya</a>
-        <div className="navLinks"><a href="#work">./work</a><a href="#writing">./writing</a></div>
+        <div className="navLinks"><a href="#work">./work</a><a href="#writing">./writing</a><button className="themeToggle" type="button" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`} title={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}><span aria-hidden="true">{theme === "dark" ? "☼" : "◐"}</span></button></div>
       </nav>
 
       <section className="intro" id="top">
-        <div className="eyebrow">Bangalore, India · building since 2017</div>
-        <h1><span>&gt;</span> Priyambada Roul</h1>
-        <p className="role">// software engineer &amp; open-source builder</p>
-        <div className="bioGrid">
+        <div className="introHeader">
+          <div><h1><span>&gt;</span> Priyambada Roul<span className="cursor" aria-hidden="true">_</span></h1><p className="role">{"// engineer"}</p></div>
           <img className="portrait" src="/priya.jpg" alt="Priyambada Roul" />
-          <div className="bio">
-            <p>I’m a software engineer at <strong>Cashfree Payments</strong>, where I build scalable systems for post-payment processing and risk. I care about thoughtful infrastructure, useful developer tools, and products that hold up in the real world.</p>
-            <p>I’ve contributed to open source through <strong>Google Summer of Code with Swift</strong>, working on toolchain management and the Swift extension for Visual Studio Code. Lately, I’ve been exploring how AI can turn ideas into working systems faster — without losing the craft in the process.</p>
-            <p>Away from code, I’ve practised <strong>Bharatanatyam</strong> since I was five. It shaped how I think about structure, rhythm, and expression in everything I make.</p>
-          </div>
+        </div>
+        <div className="bio">
+          <p>I’m a software engineer at <strong>Cashfree Payments</strong>, where I build scalable systems for post-payment processing and risk. I care about thoughtful infrastructure, useful developer tools, and products that hold up in the real world.</p>
+          <p>I’ve contributed to open source through <strong>Google Summer of Code with Swift</strong>, working on toolchain management and the Swift extension for Visual Studio Code. Lately, I’ve been exploring how AI can turn ideas into working systems faster — without losing the craft in the process.</p>
+          <p>Away from code, I’ve practised <strong>Bharatanatyam</strong> since I was five. It shaped how I think about structure, rhythm, and expression in everything I make.</p>
         </div>
       </section>
 
       <section className="collection" id="work">
-        <div className="sectionHeading"><h2><span>&gt;</span> Selected work</h2><p>// systems, tools, and experiments I’ve shipped</p></div>
+        <div className="sectionHeading"><h2><span>&gt;</span> Selected work</h2><p>{"// systems, tools, and experiments I’ve shipped"}</p></div>
         <div className="list">
           {projects.map((project) => (
             <a className="listItem" href={project.href} key={project.title} target="_blank" rel="noreferrer">
@@ -46,7 +54,7 @@ export default function Home() {
       </section>
 
       <section className="collection" id="writing">
-        <div className="sectionHeading"><h2><span>&gt;</span> Notes &amp; writing</h2><p>// ideas about engineering, open source, and building</p></div>
+        <div className="sectionHeading"><h2><span>&gt;</span> Notes &amp; writing</h2><p>{"// ideas about engineering, open source, and building"}</p></div>
         <div className="list">
           {articles.map((article) => (
             <a className="listItem" href={article.href} key={article.title} target="_blank" rel="noreferrer">
@@ -56,7 +64,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer><p><span>$</span> sendmail priyaroul99@gmail.com</p><div><a href="mailto:priyaroul99@gmail.com">email</a><a href="https://github.com/roulpriya" target="_blank" rel="noreferrer">github</a><a href="https://www.linkedin.com/in/priyambadaroul/" target="_blank" rel="noreferrer">linkedin</a><a href="https://twitter.com/tarntism_priya" target="_blank" rel="noreferrer">twitter</a></div></footer>
+      <footer><div className="footerTop"><p><span>$</span> sendmail priyaroul99@gmail.com</p><div><a href="mailto:priyaroul99@gmail.com">email</a><a href="https://github.com/roulpriya" target="_blank" rel="noreferrer">github</a><a href="https://www.linkedin.com/in/priyambadaroul/" target="_blank" rel="noreferrer">linkedin</a><a href="https://twitter.com/tarntism_priya" target="_blank" rel="noreferrer">twitter</a></div></div><small className="location">bengaluru · IST</small></footer>
     </main>
   );
 }
