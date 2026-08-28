@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
 
 :root { --ink: #202020; --muted: #666; --paper: #e9e9e9; --accent: #5d5d5d; --line: #a8a8a8; --minor-grid: rgba(32, 32, 32, .045); }
 :root[data-theme="dark"] { --ink: #f0f0ed; --muted: #aaa; --paper: #202020; --accent: #d1d1cb; --line: #555; --minor-grid: rgba(240, 240, 237, .04); }

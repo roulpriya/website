@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const projects = [
@@ -7,7 +8,7 @@ const projects = [
   { year: "2025", title: "Source Radar", glyph: "radar", description: "Source-code analysis and metrics across multiple languages, built around an extensible plugin architecture.", href: "https://github.com/sourceradar/source-radar", tags: "TypeScript · Python" },
   { year: "2025", title: "CodeWiki", glyph: "cards", description: "A personal, source-cited wiki for GitHub repositories with searchable snapshots and synced documentation.", href: "https://github.com/roulpriya/codewiki", tags: "TypeScript · Bun · Docker" },
   { year: "2026", title: "Content Manager", glyph: "calendar", description: "A multi-day content calendar with topic scheduling, AI-assisted writing, and memory management.", href: "https://github.com/roulpriya/content-manager", tags: "TypeScript · Docker" },
-];
+] as const;
 
 const articles = [
   { date: "Jun 22, 2025", title: "From Career Break to GSoC: My Open Source Journey", description: "From wiping my disk while installing Ubuntu to writing Swift and TypeScript used by thousands of developers.", href: "https://medium.com/@priyaroul99/from-career-break-to-gsoc-my-open-source-journey-24b908416ac5" },
@@ -78,7 +79,7 @@ export default function Home() {
       <section className="intro" id="top">
         <div className="introHeader">
           <div><h1><span>&gt;</span> Priyambada Roul</h1><p className="role">{"// engineer"}</p></div>
-          <span className="portraitFrame"><img className="portrait" src="/priya.jpg" alt="Priyambada Roul" /></span>
+          <span className="portraitFrame"><Image className="portrait" src="/priya.jpg" alt="Priyambada Roul" width={700} height={1050} priority /></span>
         </div>
         <div className="bio">
           <p>I’m an engineer who builds scalable platforms, useful developer tools, and fun little experiments.</p>
