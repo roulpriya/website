@@ -112,7 +112,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer ref={footerRef}><div className="footerTop"><p><a className={`mailCommand${showMailCommand ? " isVisible" : ""}`} href="mailto:priyaroul99@gmail.com" aria-label="Email Priyambada Roul"><span className="mailCommandText" aria-hidden="true">{typedMailCommand}</span>{showMailCommand && <span className="cursor" aria-hidden="true">▍</span>}</a></p><div><a href="https://github.com/roulpriya" target="_blank" rel="noreferrer">github</a><a href="https://www.linkedin.com/in/priyambadaroul/" target="_blank" rel="noreferrer">linkedin</a><a href="https://twitter.com/tarntism_priya" target="_blank" rel="noreferrer">twitter</a></div></div><small className="location">bengaluru · IST</small></footer>
+      <footer ref={footerRef}><div className="footerTop"><p><a className={`mailCommand${showMailCommand ? " isVisible" : ""}`} href="mailto:priyaroul99@gmail.com" aria-label="Email Priyambada Roul"><span className="mailCommandText" aria-hidden="true">{typedMailCommand}</span>{showMailCommand && <span className="cursor" aria-hidden="true">▍</span>}</a></p><div><a href="https://github.com/roulpriya" target="_blank" rel="noreferrer">github</a><a href="https://www.linkedin.com/in/priyambadaroul/" target="_blank" rel="noreferrer">linkedin</a><a href="https://twitter.com/tarantism_priya" target="_blank" rel="noreferrer">twitter</a></div></div><small className="location">bengaluru · IST</small></footer>
     </main>
   );
 }
