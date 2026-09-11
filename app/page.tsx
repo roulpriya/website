@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { SketchCircle } from "./sketch-circle";
 
 const projects = [
   { year: "2026", title: "AgentForge", glyph: "orbit", description: "A Kanban board that spawns AI coding agents in isolated git worktrees — one agent per ticket.", href: "https://github.com/inputforge/agentforge", tags: "TypeScript · React · Bun · SQLite" },
@@ -78,11 +79,10 @@ export default function Home() {
 
       <section className="intro" id="top">
         <div className="introHeader">
-          <div><h1><span>&gt;</span> Priyambada Roul</h1><p className="role">{"// engineer"}</p></div>
           <span className="portraitFrame"><Image className="portrait" src="/priya.jpg" alt="Priyambada Roul" width={700} height={1050} priority /></span>
         </div>
         <div className="bio">
-          <p>I’m an engineer who builds scalable platforms, useful developer tools, and fun little experiments.</p>
+          <h1><SketchCircle>Priyambada Roul</SketchCircle> is an engineer who builds scalable platforms, useful developer tools, and fun little experiments.</h1>
           <p>I currently work at Cashfree Payments on the Risk team, helping prevent fraudulent transactions. I’ve worked on systems handling thousands of transactions per second and helped resolve infrastructure challenges at scale.</p>
           <p>As part of Google Summer of Code 2025, I contributed to Swift and built the Swiftly extension for VS Code. It introduced me to a new world of development tooling and ecosystems.</p>
           <p>Over the past year, I’ve been building AI agents to make everyday work lighter and improve developer productivity for me and my team.</p>

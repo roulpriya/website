@@ -12,14 +12,14 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Priyambada Roul — Software Engineer",
     description: "Software engineer, open-source contributor, and builder based in Bangalore.",
     openGraph: {
-      title: "Priyambada Roul — Software Engineer",
+      title: "Priya Roul",
       description: "Software engineer, open-source contributor, and builder based in Bangalore.",
       type: "website",
-      images: [{ url: image, width: 1200, height: 630, alt: "Priyambada Roul — software engineer and open-source builder" }],
+      images: [{ url: image, width: 2400, height: 1260, alt: "Priya Roul — software engineer and open-source builder" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Priyambada Roul — Software Engineer",
+      title: "Priya Roul",
       description: "Software engineer, open-source contributor, and builder based in Bangalore.",
       images: [image],
     },
