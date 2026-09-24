@@ -32,8 +32,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
+        {/* Applies the stored theme before the page paints, so navigating
+            between routes never flashes the wrong palette. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{document.documentElement.dataset.theme=localStorage.getItem("theme")==="dark"?"dark":"light"}catch(e){document.documentElement.dataset.theme="light"}`,
+          }}
+        />
         {children}
       </body>
     </html>
